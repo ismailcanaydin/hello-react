@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { React } from "react";
+import Header from "./components/Header.js";
+import Deneme from './components/deneme.js';
+import UserComponent from './components/userComponent.js'
+import UseState from './components/useState.js';
+import Counter from './components/Counter.js'
+import InputExample from './components/InputExample.js'
 
 function App() {
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className='merhaba'>Merhaba React</h1>
+      <Header />
+      <hr />
+      <Deneme />
+      <hr />
+      <UserComponent />
+      <hr />
+      <UseState />
+      <hr />
+      <Counter />
+      <hr />
+      <InputExample />
+    </>
   );
 }
 
