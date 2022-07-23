@@ -1,4 +1,5 @@
-import './App.css';
+// import './App.css';
+import './components/todos/styles.css'
 import React, { useState } from "react";
 import Header from "./components/Header.js";
 import Deneme from './components/deneme.js';
@@ -8,14 +9,16 @@ import Counter from './components/Counter.js'
 import InputExample from './components/InputExample.js'
 import UseEffect from './components/UseEffect';
 import Contacts from './components/contacts-app/Contacts';
+import Todos from './components/todos';
 
 function App() {
   const [isVisible, setIsVisible] = useState(true);
 
   return (
     <div className='App'>
-      <Contacts />
-      {/* <br /><br />
+      <Todos />
+      {/*<Contacts />
+       <br /><br />
       <hr />
       <h1 className='merhaba'>Merhaba React</h1>
       <Header />
