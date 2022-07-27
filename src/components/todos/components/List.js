@@ -1,10 +1,24 @@
 import { useState, useEffect } from 'react'
 
-function List({todo}) {
-    const deleteItem = todo.filter((e) => {
+function List({ todo, setTodo, initialState }) {
+    const isCompleted = () => {
+        setTodo(todo.map(item =>
+            (item.name === todo.name ? { ...item, completed: !item.completed } : item)))
+    }
 
-    })
+    
 
+    const deleteItem = (e) => {
+        setTodo(current =>
+            current.filter(employee => {
+                return employee.new_todo !== e.target.name;
+            }),
+        );
+    };
+
+    const click = () => {
+        alert("tıklandı")
+    }
 
     return (
         <section className="main">
@@ -16,10 +30,10 @@ function List({todo}) {
             <ul className="todo-list">
                 {
                     todo.map((todos, i) => (
-                        <li key={i} className='comlated'>
-                            <input className="toggle" type="checkbox" />
+                        <li key={i} className={todo.completed ? "completed" : ""}>
+                            <input className="toggle" type="checkbox" onClick={isCompleted} />
                             <label>{todos.new_todo}</label>
-                            <button onClick={deleteItem} className="destroy"></button>
+                            <button name={todos.new_todo} onClick={deleteItem} className="destroy"></button>
                         </li>
                     ))
                 }

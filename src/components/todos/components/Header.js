@@ -4,7 +4,7 @@ import '../styles.css'
 
 const initialFormValues = { new_todo: '' }
 
-function Header({addTodo, todo}) {
+function Header({ addTodo, todo }) {
     const [form, setForm] = useState(initialFormValues);
 
     useEffect(() => {
@@ -25,14 +25,14 @@ function Header({addTodo, todo}) {
         };
 
         addTodo([...todo, form]);
-        
+
     }
-    
+
     return (
         <header className="header">
             <h1>todos</h1>
             <form onSubmit={onSubmit}>
-                <input name='new_todo' className="new-todo" placeholder="What needs to be done?" 
+                <input name='new_todo' className="new-todo" placeholder="What needs to be done?"
                     onChange={onChangeInput} value={form.new_todo} autoFocus />
             </form>
         </header>

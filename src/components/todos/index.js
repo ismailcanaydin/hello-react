@@ -4,7 +4,7 @@ import Header from './components/Header'
 import List from './components/List'
 
 function Todos() {
-    const [todo, setTodo] = useState([
+    const initialState = [
         {
             new_todo: 'Javascript'
         },
@@ -13,8 +13,10 @@ function Todos() {
         },
         {
             new_todo: 'Nodejs'
-        }
-    ]);
+        },
+      ];
+
+    const [todo, setTodo] = useState(initialState);
 
     useEffect(() => {
         console.log(todo);
@@ -24,7 +26,7 @@ function Todos() {
         <div>
             <section className="todoapp">
                 <Header addTodo={setTodo} todo={todo} />
-                <List todo={todo} />
+                <List todo={todo} setTodo={setTodo} initialState={initialState} />
                 <Footer />
             </section>
 
