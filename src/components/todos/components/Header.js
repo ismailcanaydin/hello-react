@@ -7,9 +7,6 @@ import '../styles.css'
 function Header({ addTodo, todo }) {
     const [form, setForm] = useState("");
 
-    
-
-
     useEffect(() => {
         setForm("")
         localStorage.setItem('todo-LS', JSON.stringify(todo))

@@ -22,22 +22,46 @@ function Todos() {
     //     },
     // ];
 
-    const [todo, setTodo] = useState(
-        JSON.parse(localStorage.getItem('todo-LS')) || []
-    );
+    const [todo, setTodo] = useState(JSON.parse(localStorage.getItem('todo-LS')) || []);
+
+    const [status, setStatus] = useState('');
+    const [filteredTodos, setFilteredTodos] = useState([]);
 
     const [hide, setHide] = useState("All");
 
+    // useEffect(() => {
+    //     console.log(todo);
+    // }, []);
+
     useEffect(() => {
-        console.log(todo);
-    }, []);
+        const filterHandler = () => {
+            switch (status) {
+                case 'completed':
+                    setFilteredTodos(todo.filter(todo => todo.checked === true))
+                    console.log('copm');
+                    break;
+                case 'active':
+                    setFilteredTodos(todo.filter(todo => todo.checked === false))
+                    console.log('act');
+                    break;
+                default:
+                    setFilteredTodos(todo)
+                    console.log('brk');
+                    break;
+            }
+        }
+
+        filterHandler()
+    }, [todo, status])
 
     return (
         <div>
             <section className="todoapp">
-                <Header addTodo={setTodo} todo={todo} />{" "}
-                <List todo={todo} setTodo={setTodo} hide={hide} />{" "}
-                <Footer setHide={setHide} />{" "}
+                <Header addTodo={setTodo} todo={todo} />
+                <List todo={todo} setTodo={setTodo} hide={hide} filteredTodos = {filteredTodos} />
+
+                <Footer todo={todo} setTodo={setTodo} status={status}
+                    setStatus={setStatus} setHide={setHide} />
             </section>
 
             <footer className="info">
