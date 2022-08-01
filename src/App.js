@@ -1,5 +1,5 @@
 // import './App.css';
-import './components/todos/styles.css'
+// import './components/todos/styles.css'
 import React, { useState } from "react";
 import Header from "./components/Header.js";
 import Deneme from './components/deneme.js';
@@ -10,14 +10,19 @@ import InputExample from './components/InputExample.js'
 import UseEffect from './components/UseEffect';
 import Contacts from './components/contacts-app/Contacts';
 import Todos from './components/todos';
+import Users from './components/fetching';
+import React_Router from "./components/react-router";
 
 function App() {
   const [isVisible, setIsVisible] = useState(true);
 
   return (
     <div className='App'>
+      <React_Router />
+      {/*
+      <Users />
       <Todos />
-      {/*<Contacts />
+      <Contacts />
        <br /><br />
       <hr />
       <h1 className='merhaba'>Merhaba React</h1>
