@@ -12,14 +12,17 @@ import Contacts from './components/contacts-app/Contacts';
 import Todos from './components/todos';
 import Users from './components/fetching';
 import React_Router from "./components/react-router";
+import FormikForm from "./components/formik";
+
 
 function App() {
   const [isVisible, setIsVisible] = useState(true);
 
   return (
     <div className='App'>
-      <React_Router />
+      <FormikForm />
       {/*
+      <React_Router />
       <Users />
       <Todos />
       <Contacts />
@@ -27,8 +30,6 @@ function App() {
       <hr />
       <h1 className='merhaba'>Merhaba React</h1>
       <Header />
-      <hr />
-      <Deneme />
       <hr />
       <UserComponent />
       <hr />
