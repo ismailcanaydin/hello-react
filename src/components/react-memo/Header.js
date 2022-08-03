@@ -12,4 +12,4 @@ function Header({number, increment}) {
   )
 }
 
-export default memo(Header)
+export default React.memo(Header)

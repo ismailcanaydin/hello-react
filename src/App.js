@@ -14,6 +14,7 @@ import Users from './components/fetching';
 import React_Router from "./components/react-router";
 import FormikForm from "./components/formik";
 import React_Memo from "./components/react-memo/index.js";
+import Context from "./components/context/index.js";
 
 
 function App() {
@@ -21,8 +22,10 @@ function App() {
 
   return (
     <div className='App'>
-      <React_Memo />
+      <Context />
+      
       {/*
+      <React_Memo />
       <FormikForm />
       <React_Router />
       <Users />
