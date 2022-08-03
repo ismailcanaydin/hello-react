@@ -13,6 +13,7 @@ import Todos from './components/todos';
 import Users from './components/fetching';
 import React_Router from "./components/react-router";
 import FormikForm from "./components/formik";
+import React_Memo from "./components/react-memo/index.js";
 
 
 function App() {
@@ -20,8 +21,9 @@ function App() {
 
   return (
     <div className='App'>
-      <FormikForm />
+      <React_Memo />
       {/*
+      <FormikForm />
       <React_Router />
       <Users />
       <Todos />
