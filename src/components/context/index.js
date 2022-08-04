@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Button from './components/Button'
-import ThemeContext from './ThemeContext'
+import Header from './components/Header'
+import Container from './Container'
+import ThemeContext, { ThemeProvider } from './ThemeContext'
+import { UserProvider } from './UserContext'
 
 function Context() {
+
+
     return (
-        <ThemeContext.Provider value='dark'>
-            <Button />
-        </ThemeContext.Provider>
+        <ThemeProvider>
+            <UserProvider>
+                <Container />
+            </UserProvider>
+        </ThemeProvider>
     )
 }
 

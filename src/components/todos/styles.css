@@ -4,6 +4,14 @@ body {
 	margin: 0;
 	padding: 0;
 }
+.dark {
+	background-color: #4d4d4d;
+	color: white;
+}
+.light{
+	background-color: #cc9a9a;
+	color: #af5b5e;
+}
 
 button {
 	margin: 0;
