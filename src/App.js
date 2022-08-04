@@ -1,30 +1,29 @@
 // import './App.css';
 // import './components/todos/styles.css'
-import React, { useState } from "react";
-import Header from "./components/Header.js";
-import Deneme from './components/deneme.js';
-import UserComponent from './components/userComponent.js'
-import UseState from './components/useState.js';
-import Counter from './components/Counter.js'
-import InputExample from './components/InputExample.js'
-import UseEffect from './components/UseEffect';
-import Contacts from './components/contacts-app/Contacts';
-import Todos from './components/todos';
-import Users from './components/fetching';
-import React_Router from "./components/react-router";
-import FormikForm from "./components/formik";
-import React_Memo from "./components/react-memo/index.js";
+// import React, { useState } from "react";
+// import Header from "./components/Header.js";
+// import Deneme from './components/deneme.js';
+// import UserComponent from './components/userComponent.js'
+// import UseState from './components/useState.js';
+// import Counter from './components/Counter.js'
+// import InputExample from './components/InputExample.js'
+// import UseEffect from './components/UseEffect';
+// import Contacts from './components/contacts-app/Contacts';
+// import Todos from './components/todos';
+// import Users from './components/fetching';
+// import React_Router from "./components/react-router";
+// import FormikForm from "./components/formik";
+// import React_Memo from "./components/react-memo/index.js";
 import Context from "./components/context/index.js";
 
-
 function App() {
-  const [isVisible, setIsVisible] = useState(true);
+  // const [isVisible, setIsVisible] = useState(true);
 
   return (
     <div className='App'>
       <Context />
-      
       {/*
+      
       <React_Memo />
       <FormikForm />
       <React_Router />
