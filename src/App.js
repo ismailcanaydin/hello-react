@@ -15,15 +15,23 @@
 // import FormikForm from "./components/formik";
 // import React_Memo from "./components/react-memo/index.js";
 import Context from "./components/context/index.js";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from "./components/context2/components/Header.js";
+import { GlobalProvider } from "./components/context2/Context/GlobalState.js";
+import Menu from "./components/context2/components/Menu.js";
 
 function App() {
   // const [isVisible, setIsVisible] = useState(true);
 
   return (
     <div className='App'>
-      <Context />
+      <GlobalProvider>
+        <Menu />
+        <Header />
+        
+      </GlobalProvider>
       {/*
-      
+      <Context />
       <React_Memo />
       <FormikForm />
       <React_Router />
