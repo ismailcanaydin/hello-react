@@ -1,32 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { IntlProvider, FormattedMessage, FormattedNumber } from 'react-intl';
 import styles from '../App.css';
+
 const messages = {
   'tr-TR': {
     title: 'Merhaba Dünya',
-    description: '3 yeni mesajınız var!'
+    description: '{count} yeni mesajınız var!'
   },
   'en-EN': {
     title: 'Hello World',
-    description: 'You have 3 new messages!',
+    description: 'You have {count} new messages!',
   }
 };
 
 function React_Inıtl() {
-  const [lang, setLang] = useState('tr-TR');
+  const isLocale = localStorage.getItem("locale");
+  const defaultLocale = isLocale ? isLocale : navigator.language;
+  const [locale, setLocale] = useState(defaultLocale);
+
+  useEffect(() => {
+    localStorage.setItem("locale", locale);
+  }, [locale]);
 
   return (
     <div>
-      <IntlProvider messages={messages[lang]}>
+      <IntlProvider locale={locale} messages={messages[locale]}>
         <FormattedMessage id='title' />
         <p>
-          <FormattedMessage id='description' />
+          <FormattedMessage id='description' values={{ count: 5 }} />
         </p>
 
         <br />
         <br />
-        <button onClick={() => setLang('tr-TR')}>TR</button>&nbsp;
-        <button onClick={() => setLang('en-EN')}>EN</button>
+        <button onClick={() => setLocale('tr-TR')}>TR</button>&nbsp;
+        <button onClick={() => setLocale('en-EN')}>EN</button>
       </IntlProvider>
     </div>
   )
