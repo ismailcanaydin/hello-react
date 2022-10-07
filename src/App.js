@@ -20,14 +20,17 @@ import Header from "./components/context2/components/Header.js";
 import { GlobalProvider } from "./components/context2/Context/GlobalState.js";
 import Menu from "./components/context2/components/Menu.js";
 import React_Inıtl from "./react-initl/React_Inıtl.js";
+import Counter from "./testing/Counter.js";
 
 function App() {
   // const [isVisible, setIsVisible] = useState(true);
 
   return (
     <div className='App'>
-      <React_Inıtl />
-      {/* <GlobalProvider>
+      <Counter />
+      {/* <React_Inıtl /> */}
+      {/*       
+      <GlobalProvider>
         <Menu />
         <Header />
       </GlobalProvider> */}
